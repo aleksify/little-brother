@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cqis4uhknpnt6" path="res://Assets/Baseclock.png" id="5_hqns4"]
 [ext_resource type="Texture2D" uid="uid://calo3sy41xcpv" path="res://Assets/BasePowerCrank.png" id="6_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://erwx8gxa272v" path="res://Assets/BaseDocument.png" id="7_0h7mo"]
+[ext_resource type="Script" uid="uid://c8ybauslxxmy5" path="res://Scripts/camera_2d.gd" id="8_rj586"]
+[ext_resource type="Script" uid="uid://dw463aq2bbje3" path="res://Scripts/area_2d.gd" id="9_4d7sh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyql7"]
+size = Vector2(186.5, 503)
 
 [node name="Node2D" type="Node2D" unique_id=1319346127]
 
@@ -53,3 +58,34 @@ texture = ExtResource("6_x0ka3")
 position = Vector2(242, 420)
 scale = Vector2(0.6666667, 1)
 texture = ExtResource("7_0h7mo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=404264206]
+position = Vector2(453, 236)
+zoom = Vector2(1.45, 1.565)
+limit_left = 2
+limit_top = 1
+limit_right = 922
+limit_bottom = 481
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.08
+drag_right_margin = 0.08
+editor_draw_limits = true
+script = ExtResource("8_rj586")
+
+[node name="left_area" type="Area2D" parent="." unique_id=1702936348]
+script = ExtResource("9_4d7sh")
+
+[node name="left" type="CollisionShape2D" parent="left_area" unique_id=387334250]
+position = Vector2(90.75, 240)
+shape = SubResource("RectangleShape2D_xyql7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=332293097]
+position = Vector2(453, 236)
+
+[node name="right" type="CollisionShape2D" parent="Area2D" unique_id=1196818840]
+position = Vector2(379, 9)
+shape = SubResource("RectangleShape2D_xyql7")
+
+[connection signal="mouse_entered" from="left_area" to="left_area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="left_area" to="left_area" method="_on_mouse_exited"]
