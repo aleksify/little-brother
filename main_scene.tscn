@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dtacmlaxdgux0" path="res://scene_loader_script.gd" id="1_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://dbfahi7hutasp" path="res://full.tscn" id="2_8mm7a"]
 [ext_resource type="Script" uid="uid://30pwlnpb7g7t" path="res://Scripts/button2.gd" id="3_hq1ik"]
-[ext_resource type="PackedScene" uid="uid://qx6ih3j10kar" path="res://channel1.tscn" id="4_nfk4m"]
+[ext_resource type="PackedScene" uid="uid://bu5p23007v54" path="res://channel1.tscn" id="4_nfk4m"]
 
 [node name="MainScene" type="Node2D" unique_id=1517272183]
 script = ExtResource("1_d5x1h")
@@ -43,16 +43,6 @@ offset_bottom = 267.0
 script = ExtResource("3_hq1ik")
 
 [node name="channel1" parent="." unique_id=367844977 instance=ExtResource("4_nfk4m")]
-visible = false
-
-[node name="channel2" parent="." unique_id=1753312149 instance=ExtResource("4_nfk4m")]
-visible = false
-
-[node name="channel3" parent="." unique_id=67172495 instance=ExtResource("4_nfk4m")]
-visible = false
-
-[node name="channel4" parent="." unique_id=1687167244 instance=ExtResource("4_nfk4m")]
-visible = false
 
 [connection signal="pressed" from="full/Monitor1" to="full/Monitor1" method="_on_pressed"]
 [connection signal="pressed" from="full/Monitor2" to="full/Monitor2" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://qx6ih3j10kar"]
+[gd_scene format=3 uid="uid://bu5p23007v54"]
 
 [ext_resource type="Texture2D" uid="uid://8x44m5t6obgf" path="res://LILBRO/CameraFeedBackground1.png" id="1_r5foh"]
 [ext_resource type="Script" uid="uid://bl6k21glii0ia" path="res://Scripts/channel_scene.gd" id="1_ykaf8"]
