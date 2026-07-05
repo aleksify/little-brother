@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cka10ri5ujd0y"]
+
+[ext_resource type="Script" uid="uid://by1ujt4jt61ir" path="res://Scripts/character_class.gd" id="1_glpr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
+size = Vector2(100, 100)
+
+[node name="Character" type="Node2D" unique_id=1325975160]
+script = ExtResource("1_glpr6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2016489291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1614310995]
+shape = SubResource("RectangleShape2D_pjt0s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=296973123]
