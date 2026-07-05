@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://c7337kjdqs4qs"]
-
-[ext_resource type="Script" uid="uid://c8t6ctwbii2d7" path="res://Scripts/channel_class.gd" id="1_qkkds"]
-
-[node name="Channel" type="Node2D" unique_id=368990184]
-script = ExtResource("1_qkkds")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1074773399]
