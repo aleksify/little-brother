@@ -6,50 +6,41 @@ extends AnimatedSprite2D
 var action_list
 var action
 
-
+var frame_action_count: int = 0
+var home_position_x: float
+var is_anim_playing: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	home_position_x = position.x
 	action_list = channel_scene.action_list
 	action = channel_scene.action
 
-var frame_action_count: int = 0
+
+func reset_position() -> void:
+	position.x = home_position_x
+	
+
+func perform_anim() -> void:
+	is_anim_playing = true
+	play(action_list[action])
+	await get_tree().create_timer(5).timeout
+	is_anim_playing = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if action < 7:
-		event_solo(delta)
-	else:
-		event_pairs(delta)
+	if not is_anim_playing:
+		event(delta, action)
+	action = channel_scene.action
 
 
-
-		
-		
-
-
-func event_solo(delta: float) -> void:
-	if position.x < 40 and position.x > -40 and action != -1:
-		frame_action_count += 1
-		if frame_action_count < 1000:
-			play(action_list[action])
-		else:
-			action = -1
-	else:
-		play("walking")
+func event(delta: float, action: int) -> void:
+	play("walking")
+	if action < 8 and action != 0:
 		if scale.x < 0:
 			position.x += 100 * delta
-
-
-func event_pairs(delta: float) -> void:
-	if position.x < 40 and position.x > -40 and action != -1:
-		frame_action_count += 1
-		if frame_action_count < 1000:
-			play(action_list[action])
-		else:
-			action = -1
-	else:
-		play("walking")
+	elif action >= 8:
 		if scale.x < 0:
 			position.x += 100 * delta
 		else:
