@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c8ybauslxxmy5" path="res://Scripts/camera_2d.gd" id="1_nxo4g"]
 [ext_resource type="Script" uid="uid://c4x61ybex4nta" path="res://Scripts/left_area.gd" id="2_r6o3y"]
 [ext_resource type="Script" uid="uid://c383qxq8wdkqj" path="res://Scripts/right_area.gd" id="3_cq5yo"]
-[ext_resource type="PackedScene" uid="uid://cka10ri5ujd0y" path="res://character.tscn" id="4_cq5yo"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cq5yo"]
 
@@ -39,8 +38,6 @@ script = ExtResource("3_cq5yo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collision_areas/right" unique_id=1194387481]
 position = Vector2(1060, 0)
 shape = SubResource("RectangleShape2D_vtoup")
-
-[node name="Character" parent="." unique_id=1325975160 instance=ExtResource("4_cq5yo")]
 
 [connection signal="mouse_entered" from="collision_areas/left" to="collision_areas/left" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="collision_areas/left" to="collision_areas/left" method="_on_mouse_exited"]
