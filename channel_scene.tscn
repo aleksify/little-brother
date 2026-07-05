@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dfopfcx3ptnkb" path="res://Scripts/move_animatedsprite2d.gd" id="4_brgx3"]
 [ext_resource type="Script" uid="uid://uj54vskh0u0j" path="res://Scripts/stop_walking.gd" id="6_nvqim"]
 [ext_resource type="Script" uid="uid://fb2g7bgyb22l" path="res://Scripts/perform_anim.gd" id="7_kyeww"]
-[ext_resource type="Script" uid="uid://30pwlnpb7g7t" path="res://Scripts/button.gd" id="8_opyxs"]
+[ext_resource type="Script" uid="uid://30pwlnpb7g7t" path="res://Scripts/button2.gd" id="8_opyxs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5o26"]
 atlas = ExtResource("3_ykaf8")
