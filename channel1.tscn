@@ -1,13 +1,11 @@
-[gd_scene format=3 uid="uid://bu5p23007v54"]
+[gd_scene format=3 uid="uid://qx6ih3j10kar"]
 
 [ext_resource type="Texture2D" uid="uid://8x44m5t6obgf" path="res://LILBRO/CameraFeedBackground1.png" id="1_r5foh"]
 [ext_resource type="Script" uid="uid://bl6k21glii0ia" path="res://Scripts/channel_scene.gd" id="1_ykaf8"]
 [ext_resource type="Texture2D" uid="uid://xeatbgswk40h" path="res://LILBRO/CameraFeedForeground.png" id="2_brgx3"]
 [ext_resource type="Texture2D" uid="uid://hf3mlfhkpet2" path="res://LILBRO/ANIMATIONSHEET.png" id="3_ykaf8"]
 [ext_resource type="Script" uid="uid://dfopfcx3ptnkb" path="res://Scripts/move_animatedsprite2d.gd" id="4_brgx3"]
-[ext_resource type="Script" uid="uid://uj54vskh0u0j" path="res://Scripts/stop_walking.gd" id="6_nvqim"]
 [ext_resource type="Script" uid="uid://fb2g7bgyb22l" path="res://Scripts/perform_anim.gd" id="7_kyeww"]
-[ext_resource type="Script" uid="uid://30pwlnpb7g7t" path="res://Scripts/button2.gd" id="8_opyxs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5o26"]
 atlas = ExtResource("3_ykaf8")
@@ -360,8 +358,6 @@ size = Vector2(4.79834, 18.333334)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtoaq"]
 size = Vector2(4.798, 18.333)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwuif"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avhti"]
 
 [node name="ChannelScene" type="Node2D" unique_id=367844977]
@@ -386,8 +382,7 @@ shape = SubResource("RectangleShape2D_mb4t0")
 
 [node name="Character2" type="AnimatedSprite2D" parent="." unique_id=1823942012]
 position = Vector2(-700, 0)
-rotation = 3.1415927
-scale = Vector2(3, -3)
+scale = Vector2(-3, 3)
 sprite_frames = SubResource("SpriteFrames_xyql7")
 animation = &"talking"
 script = ExtResource("4_brgx3")
@@ -406,23 +401,6 @@ texture = ExtResource("2_brgx3")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095615365]
 zoom = Vector2(0.6, 0.6)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=80422529]
-position = Vector2(-800, 0)
-scale = Vector2(17.99, 55)
-script = ExtResource("6_nvqim")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=977392178]
-shape = SubResource("RectangleShape2D_lwuif")
-
-[node name="Area2D2" type="Area2D" parent="." unique_id=1215436542]
-position = Vector2(800, 0)
-scale = Vector2(15.62, 55)
-script = ExtResource("6_nvqim")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=17024900]
-visibility_layer = 2
-shape = SubResource("RectangleShape2D_lwuif")
-
 [node name="Area2D3" type="Area2D" parent="." unique_id=574484298]
 script = ExtResource("7_kyeww")
 
@@ -431,14 +409,4 @@ visibility_layer = 3
 scale = Vector2(12, 55)
 shape = SubResource("RectangleShape2D_avhti")
 
-[node name="Button" type="Button" parent="." unique_id=890922671]
-offset_left = 105.0
-offset_top = -254.0
-offset_right = 598.0
-offset_bottom = -29.0
-script = ExtResource("8_opyxs")
-
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
-[connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]
 [connection signal="area_entered" from="Area2D3" to="Area2D3" method="_on_area_entered"]
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

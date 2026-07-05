@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c8ybauslxxmy5" path="res://Scripts/camera_2d.gd" id="1_nxo4g"]
 [ext_resource type="Script" uid="uid://c4x61ybex4nta" path="res://Scripts/left_area.gd" id="2_r6o3y"]
 [ext_resource type="Script" uid="uid://c383qxq8wdkqj" path="res://Scripts/right_area.gd" id="3_cq5yo"]
+[ext_resource type="Texture2D" uid="uid://erwx8gxa272v" path="res://Assets/BaseDocument.png" id="4_xlsu8"]
+[ext_resource type="Script" uid="uid://ct3yuktqtl7fn" path="res://Scripts/monitor_button.gd" id="5_xlsu8"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cq5yo"]
 
@@ -39,7 +41,22 @@ script = ExtResource("3_cq5yo")
 position = Vector2(1060, 0)
 shape = SubResource("RectangleShape2D_vtoup")
 
+[node name="Monitors" type="Sprite2D" parent="." unique_id=1164092512]
+position = Vector2(-649, -447)
+texture = ExtResource("4_xlsu8")
+
+[node name="Button" type="Button" parent="Monitors" unique_id=61371747]
+show_behind_parent = true
+offset_left = -75.0
+offset_top = -60.0
+offset_right = -33.0
+offset_bottom = -25.0
+scale = Vector2(3.5662591, 3.4376047)
+script = ExtResource("5_xlsu8")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="mouse_entered" from="collision_areas/left" to="collision_areas/left" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="collision_areas/left" to="collision_areas/left" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="collision_areas/right" to="collision_areas/right" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="collision_areas/right" to="collision_areas/right" method="_on_mouse_exited"]
+[connection signal="pressed" from="Monitors/Button" to="Monitors/Button" method="_on_pressed"]

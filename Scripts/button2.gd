@@ -1,8 +1,6 @@
 extends Button
 
-
-@onready var channel_scene: Node2D = get_parent()
-
+@onready var channel_scene: Node2D = $"../../channel1"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,4 +13,9 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	channel_scene.go_to_second()
+	if channel_scene.visible:
+		visible = true
+		channel_scene.visible = false
+	else:
+		visible = false
+		channel_scene.visible = true

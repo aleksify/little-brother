@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bh472lo3gand8"]
+
+[ext_resource type="Script" uid="uid://dtacmlaxdgux0" path="res://scene_loader_script.gd" id="1_d5x1h"]
+[ext_resource type="PackedScene" uid="uid://dbfahi7hutasp" path="res://full.tscn" id="2_8mm7a"]
+[ext_resource type="Script" uid="uid://30pwlnpb7g7t" path="res://Scripts/button2.gd" id="3_hq1ik"]
+[ext_resource type="PackedScene" uid="uid://qx6ih3j10kar" path="res://channel1.tscn" id="4_nfk4m"]
+
+[node name="MainScene" type="Node2D" unique_id=1517272183]
+script = ExtResource("1_d5x1h")
+
+[node name="full" parent="." unique_id=36143469 instance=ExtResource("2_8mm7a")]
+
+[node name="Monitor1" type="Button" parent="full" unique_id=861706550]
+z_index = 5
+offset_left = -368.0
+offset_top = 68.0
+offset_right = -68.0
+offset_bottom = 281.0
+script = ExtResource("3_hq1ik")
+
+[node name="Monitor2" type="Button" parent="full" unique_id=1433358041]
+z_index = 5
+offset_left = 88.0
+offset_top = -271.0
+offset_right = 388.0
+offset_bottom = -58.0
+script = ExtResource("3_hq1ik")
+
+[node name="Monitor3" type="Button" parent="full" unique_id=91964186]
+z_index = 5
+offset_left = -390.0
+offset_top = -268.0
+offset_right = -90.0
+offset_bottom = -55.0
+script = ExtResource("3_hq1ik")
+
+[node name="Monitor4" type="Button" parent="full" unique_id=1445046048]
+z_index = 5
+offset_left = 85.0
+offset_top = 54.0
+offset_right = 385.0
+offset_bottom = 267.0
+script = ExtResource("3_hq1ik")
+
+[node name="channel1" parent="." unique_id=367844977 instance=ExtResource("4_nfk4m")]
+visible = false
+
+[node name="channel2" parent="." unique_id=1753312149 instance=ExtResource("4_nfk4m")]
+visible = false
+
+[node name="channel3" parent="." unique_id=67172495 instance=ExtResource("4_nfk4m")]
+visible = false
+
+[node name="channel4" parent="." unique_id=1687167244 instance=ExtResource("4_nfk4m")]
+visible = false
+
+[connection signal="pressed" from="full/Monitor1" to="full/Monitor1" method="_on_pressed"]
+[connection signal="pressed" from="full/Monitor2" to="full/Monitor2" method="_on_pressed"]
+[connection signal="pressed" from="full/Monitor3" to="full/Monitor3" method="_on_pressed"]
+[connection signal="pressed" from="full/Monitor4" to="full/Monitor4" method="_on_pressed"]

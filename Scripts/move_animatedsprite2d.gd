@@ -17,10 +17,6 @@ func _ready() -> void:
 	action = channel_scene.action
 
 
-func reset_position() -> void:
-	position.x = home_position_x
-	
-
 func perform_anim() -> void:
 	is_anim_playing = true
 	play(action_list[action])
@@ -33,6 +29,11 @@ func _process(delta: float) -> void:
 	if not is_anim_playing:
 		event(delta, action)
 	action = channel_scene.action
+	print(position.x)
+	if scale.x > 0 and position.x < -900:
+		position.x = home_position_x
+	if scale.x < 0 and position.x > 900:
+		position.x = home_position_x
 
 
 func event(delta: float, action: int) -> void:
